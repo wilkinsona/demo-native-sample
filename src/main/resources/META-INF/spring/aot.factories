@@ -1,0 +1,4 @@
+org.springframework.aot.hint.RuntimeHintsRegistrar=\
+com.example.demonativesample.WebRuntimeHintsRegistrar
+org.springframework.beans.factory.aot.BeanFactoryInitializationAotProcessor=\
+com.example.demonativesample.ControllerBeanFactoryInitializationAotProcessor
