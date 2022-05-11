@@ -29,6 +29,8 @@ tasks.named('test') {
 generateAotSources {
 	// Uncomment to debug AOT processing
 	// jvmArgs "-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=8000"
+	args "--spring.main.banner-mode=off"
+	args "--logging.level.com.example.demonativesample.DemoNativeSampleApplication=warn"
 }
 
 graalvmNative {
