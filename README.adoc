@@ -1,21 +1,11 @@
 = Native sample with Spring Boot 3
-
 This sample can be used to hack on Native with Spring Boot 3.
 
-NOTE: This is a work in progress and requires a local build of Spring Boot.
+
 
 == Setup
-
-You need to install a version of Spring Boot `3.0.0-SNAPSHOT` from the `aot` branch
-
-[indent=0]
-----
-	$ git checkout aot
-	$ ./gradlew publishToMavenLocal
-----
-
-You also need to have a `native-image` in your path. The easiest way to get started
-is with SDKMan:
+You need to have a `native-image` in your path.
+The easiest way to get started is with SDKMan:
 
 [indent=0]
 ----
@@ -39,8 +29,14 @@ Validate that GraalVM is available in your shell:
 	OpenJDK 64-Bit Server VM GraalVM 22.0.0.2 (build 17.0.2+9-LTS, mixed mode, sharing)
 ----
 
-== Building
 
+
+== Building and Running
+The sample can be built with Maven or Gradle.
+
+
+
+=== Maven
 To build the project and generate a native image for it, run the following command:
 
 [indent=0]
@@ -48,14 +44,30 @@ To build the project and generate a native image for it, run the following comma
 	$ ./mvnw package -Pnative
 ----
 
-== Running
-
-One the build has completed, the native executable is in your `target` directory. You
-can run it as follows:
+One the build has completed, the native executable is in your `target` directory.
+You can run it as follows:
 
 [indent=0]
 ----
 	$ target/demo-native-sample
+----
+
+
+
+=== Gradle
+To build the project and generate a native image for it, run the following command:
+
+[indent=0]
+----
+	$ ./gradlew nativeCompile
+----
+
+One the build has completed, the native executable is in your `build/native/nativeCompile` directory.
+You can run it as follows:
+
+[indent=0]
+----
+	$ build/native/nativeCompile/demo-native-sample
 ----
 
 
