@@ -32,12 +32,3 @@ generateAotSources {
 	args "--spring.main.banner-mode=off"
 	args "--logging.level.com.example.demonativesample.DemoNativeSampleApplication=warn"
 }
-
-graalvmNative {
-	binaries {
-		main {
-			buildArgs.add("-H:+PrintAnalysisCallTree")
-			buildArgs.add("--initialize-at-build-time=org.springframework.http.HttpStatus")
-		}
-	}
-}
